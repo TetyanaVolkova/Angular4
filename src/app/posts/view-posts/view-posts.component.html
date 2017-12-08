@@ -1,0 +1,12 @@
+<h2>Posts number: {{ postList.length }} </h2>
+
+<div class="row" *ngFor="let post of postList">
+  <div class="col-xs-10">
+    <a href="#" class="list-group-item clearfix">
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">{{ post.title }}</h4>
+        <p class="list-group-item-text">{{ post.description }}</p>
+      </div>
+    </a>
+  </div>
+</div>
