@@ -10,6 +10,10 @@ import { Post } from '../post.model';
 export class ViewPostsComponent implements OnInit {
   @Input() postList: Post[] = [
   ];
+  onDeletePost(index) {
+    this.postList.splice(index, 1);
+    console.log(this.postList);
+  }
   
   constructor() { }
 

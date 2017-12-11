@@ -1,11 +1,29 @@
 <h2>Posts number: {{ postList.length }} </h2>
 
-<div class="row" *ngFor="let post of postList">
+<div class="row form-group" *ngFor="let post of postList; let i = index">
   <div class="col-xs-10">
-    <a href="#" class="list-group-item clearfix">
-      <div class="pull-left">
-        <h4 class="list-group-item-heading">{{ post.title }}</h4>
-        <p class="list-group-item-text">{{ post.description }}</p>
+    <a href="#" class="list-group-item post-container">
+      <div>
+        <div class="form-group">
+            <h4 class="list-group-item-heading">{{ post.title }}</h4>
+            <p class="list-group-item-text">{{ post.description }}</p>
+        </div>
+
+        <div class="form-group">
+            <a href="#" class="btn btn-primary a-btn-slide-text">
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                <span><strong>Edit</strong></span>            
+            </a>
+            <a href="#" class="btn btn-success a-btn-slide-text">
+               <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                <span><strong>Save</strong></span>            
+            </a>
+            <a href="#" class="btn btn-danger a-btn-slide-text" (click)="onDeletePost(post, i)">
+               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                <span><strong>Delete</strong></span>            
+            </a>
+        </div>
+
       </div>
     </a>
   </div>

@@ -17,8 +17,9 @@ export class PostsComponent implements OnInit {
   ngOnInit() {
   }
 
-  addPostToArray(newPost: Post) {
+  addPostToArray(newPost) {
     this.posts.push(newPost);
+    newPost = '';
   }
 
 }

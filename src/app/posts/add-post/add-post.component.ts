@@ -14,9 +14,9 @@ export class AddPostComponent implements OnInit {
 
   onAddPost() {
     this.addPostEvent.emit(this.newPost);
+    this.newPost.title = '';
     //this.newPost = {title: this.newPostTitle, description: this.newPostDescription}
-
-    console.log(Post);
+    
   }
 
   constructor() { }
