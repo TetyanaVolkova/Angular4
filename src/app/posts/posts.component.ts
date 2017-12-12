@@ -18,8 +18,7 @@ export class PostsComponent implements OnInit {
   }
 
   addPostToArray(newPost) {
-    this.posts.push(newPost);
-    newPost = '';
+    this.posts.push(new Post(newPost.title, newPost.description));
   }
 
 }

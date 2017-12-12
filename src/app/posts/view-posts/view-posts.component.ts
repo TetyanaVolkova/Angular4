@@ -8,11 +8,17 @@ import { Post } from '../post.model';
   styleUrls: ['./view-posts.component.css']
 })
 export class ViewPostsComponent implements OnInit {
+  disabled_btn = [false, false, false];
   @Input() postList: Post[] = [
   ];
-  onDeletePost(index) {
+  onDeletePost(post, index) {
     this.postList.splice(index, 1);
-    console.log(this.postList);
+  }
+  onEditPost(post, i) {
+    this.disabled_btn[i] = !this.disabled_btn[i];
+  }
+  onSavePost(post, i) {
+    this.disabled_btn[i] = !this.disabled_btn[i];
   }
   
   constructor() { }
