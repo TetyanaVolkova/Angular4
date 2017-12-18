@@ -1,4 +1,4 @@
 <div class="container">
-  <app-add-post (addPostEvent)="addPostToArray($event)"></app-add-post>
+  <app-add-post (addPostEvent)="addPostToArray($event)" [mode]="mode"></app-add-post>
   <app-view-posts [postList]="posts"></app-view-posts>
 </div>

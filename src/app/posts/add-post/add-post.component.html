@@ -13,8 +13,8 @@
   </div>
   <div class="row">
     <div class="col-xs-10">
-      <button [disabled]="title.invalid || description.invalid" class="btn btn-success"
-      (click)="onAddPost($event)">New Post</button>
+      <button *ngIf="mode === 'create'" [disabled]="title.invalid || description.invalid" class="btn btn-success"
+      (click)="onAddPost()">Add</button>
     </div>
   </div>
 </div>

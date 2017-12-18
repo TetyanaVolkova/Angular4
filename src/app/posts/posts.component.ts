@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Post } from './post.model';
 
 @Component({
@@ -13,12 +13,15 @@ export class PostsComponent implements OnInit {
     new Post('Test #2', 'Description for test #2')
   ];
 
+  mode: string = "create";
+
   constructor() { }
   ngOnInit() {
   }
 
   addPostToArray(newPost) {
-    this.posts.push(new Post(newPost.title, newPost.description));
+    //this.posts.push(new Post(newPost.title, newPost.description));
+    this.posts.push(newPost);
   }
 
 }
