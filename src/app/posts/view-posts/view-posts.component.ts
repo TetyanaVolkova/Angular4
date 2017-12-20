@@ -11,14 +11,17 @@ export class ViewPostsComponent implements OnInit {
 
   @Input() postList: Post[] = [
   ];
-  
+  editIndex:number = null;
 
   onDeletePost(index) {
     this.postList.splice(index, 1);
   }
+  onEditPost(i) {
+    this.editIndex = i;
+  }
  
-  onSavePost(post, i) {
-    console.log(post);
+  onSavePost(i) {
+    this.editIndex=null;
   }
   
   constructor() { }

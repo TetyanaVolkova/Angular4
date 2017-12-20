@@ -11,14 +11,14 @@
         </div>
         <div *ngIf="editIndex == i" class="edit-post">
           <!--edit-->
-          <app-add-post [newPost]="post"></app-add-post>
+          <app-add-post [newPost]="post" [mode]="'edit'"></app-add-post>
         </div>
         <div class="form-group">
-            <button *ngIf="editIndex != i" class="btn btn-primary a-btn-slide-text" (click)="editIndex = i;">
+            <button *ngIf="editIndex != i" class="btn btn-primary a-btn-slide-text" (click)="onEditPost(i)">
                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                 <span><strong>Edit</strong></span>            
             </button>
-            <button *ngIf="editIndex == i" class="btn btn-success a-btn-slide-text" (click)="onSavePost(post, i); editIndex=null">
+            <button *ngIf="editIndex == i" class="btn btn-success a-btn-slide-text" (click)="onSavePost(editIndex);">
                <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
                 <span><strong>Save</strong></span>            
             </button>
